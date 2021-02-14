@@ -3,6 +3,118 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h1>Hello weather!</h1>
-<p>This is my first weather.</p>
+<div class="container py-5 text-center">
+    <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Prateek's weather app</h1>
+        <p class="lead text-muted">Welcome! This web app is hosted on a Raspberry Pi inside Prateek's apartment. It shows the current weather in Berkeley, CA.</p>
+        <p>
+            <a href="https://openweathermap.org/city/5327684" target="_blank" class="btn btn-primary my-2">View on OpenWeatherMap</a>
+        </p>
+    </div>
+</div>
+
+<div class="py-5 bg-light">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <!-- Current temperature -->
+            <div class="col">
+                <div class="card shadow-sm text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Current temperature</h5>
+                        <h2 class="card-text fw-light">{{ curr_temp }}</h2>
+                        <a href="https://openweathermap.org/city/5327684" target="_blank" class="card-link">Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Low temperature -->
+            <div class="col">
+                <div class="card shadow-sm text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Low temperature</h5>
+                        <h2 class="card-text fw-light">{{ low_temp }}</h2>
+                        <a href="https://openweathermap.org/city/5327684" target="_blank" class="card-link">Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- High temperature -->
+            <div class="col">
+                <div class="card shadow-sm text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">High temperature</h5>
+                        <h2 class="card-text fw-light">{{ high_temp }}</h2>
+                        <a href="https://openweathermap.org/city/5327684" target="_blank" class="card-link">Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sunrise time -->
+            <div class="col">
+                <div class="card shadow-sm text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Sunrise time</h5>
+                        <h2 class="card-text fw-light">{{ sunrise }}</h2>
+                        <a href="https://openweathermap.org/city/5327684" target="_blank" class="card-link">Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sunset time -->
+            <div class="col">
+                <div class="card shadow-sm text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Sunset time</h5>
+                        <h2 class="card-text fw-light">{{ sunset }}</h2>
+                        <a href="https://openweathermap.org/city/5327684" target="_blank" class="card-link">Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- "Feels like" temperature -->
+            <div class="col">
+                <div class="card shadow-sm text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">"Feels like" temperature</h5>
+                        <h2 class="card-text fw-light">{{ feels_like_temp }}</h2>
+                        <a href="https://openweathermap.org/city/5327684" target="_blank" class="card-link">Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pressure -->
+            <div class="col">
+                <div class="card shadow-sm text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Pressure</h5>
+                        <h2 class="card-text fw-light">{{ pressure }}</h2>
+                        <a href="https://openweathermap.org/city/5327684" target="_blank" class="card-link">Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Humidity -->
+            <div class="col">
+                <div class="card shadow-sm text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Humidity</h5>
+                        <h2 class="card-text fw-light">{{ humidity }}</h2>
+                        <a href="https://openweathermap.org/city/5327684" target="_blank" class="card-link">Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wind speed -->
+            <div class="col">
+                <div class="card shadow-sm text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Wind speed</h5>
+                        <h2 class="card-text fw-light">{{ wind_speed }}</h2>
+                        <a href="https://openweathermap.org/city/5327684" target="_blank" class="card-link">Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
