@@ -9,13 +9,19 @@ class WeatherClient():
         city = 'berkeley,ca,usa'
         forecast_num_days = 7
 
-        current_url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&units=imperial&appid={api_key}'
-        current_response = requests.get(current_url)
-        self.current_data = json.loads(current_response.text)
+        try:
+            current_url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&units=imperial&appid={api_key}'
+            current_response = requests.get(current_url)
+            self.current_data = json.loads(current_response.text)
+        except:
+            print('Failed to get current weather')
 
-        forecast_url = f'https://api.openweathermap.org/data/2.5/forecast/daily?q={city}&units=imperial&cnt={forecast_num_days}&appid={api_key}'
-        forecast_response = requests.get(forecast_url)
-        self.forecast_data = json.loads(forecast_response.text)
+        try:
+            forecast_url = f'https://api.openweathermap.org/data/2.5/forecast/daily?q={city}&units=imperial&cnt={forecast_num_days}&appid={api_key}'
+            forecast_response = requests.get(forecast_url)
+            self.forecast_data = json.loads(forecast_response.text)
+        except:
+            print('Failed to get forecast weather')
 
     def get_current_temperature(self):
         temp = self.current_data['main']['temp']
